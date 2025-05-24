@@ -1,0 +1,223 @@
+// tetin file version 1.1
+// written by ICEM CFD - version 14.0 on Fri May 16 13:45:57 2025
+// written by ICEM CFD - version 14.0 on Fri May 16 13:58:35 2025
+// written by ICEM CFD - version 14.0 on Fri May 16 14:05:59 2025
+// written by ICEM CFD - version 14.0 on Fri May 16 14:59:38 2025
+
+set_triangulation_tolerance 0.001
+define_family GEOM color 16663866
+define_family IN color 16462684
+define_family OUT color 3372275
+define_family WALL color 3604041
+define_family EXIT color 3401865
+define_family INTER color 3403898
+define_family SOLID color 3403389
+define_family CREATED_FACES color 11782707
+
+prescribed_point 0 10 0 family GEOM name pnt.00
+prescribed_point 0 -10 0 family GEOM name pnt.01
+prescribed_point 10 -6 0 family GEOM name pnt.02
+prescribed_point 10 6 0 family GEOM name pnt.03
+prescribed_point 50 20 0 family GEOM name pnt.04
+prescribed_point 50 -20 0 family GEOM name pnt.05
+prescribed_point 50 -40 0 family GEOM name pnt.06
+prescribed_point 50 40 0 family GEOM name pnt.07
+prescribed_point 100 40 0 family GEOM name pnt.08
+prescribed_point 100 -40 0 family GEOM name pnt.09
+prescribed_point 100 -20 0 family GEOM name pnt.10
+prescribed_point 100 20 0 family GEOM name pnt.11
+define_curve family IN tetra_size 1e+010 name crv.00 vertex1 pnt.00 vertex2 pnt.01
+bspline
+2,2,0
+0,0,1,1
+0,10,0
+0,-10,0
+define_curve family GEOM tetra_size 1e+010 name crv.01 vertex1 pnt.01 vertex2 pnt.02
+bspline
+2,2,0
+0,0,1,1
+0,-10,0
+10,-6,0
+define_curve family WALL tetra_size 1e+010 name crv.02 vertex1 pnt.01 vertex2 pnt.02
+bspline
+2,2,0
+0,0,1,1
+0,-10,0
+10,-6,0
+define_curve family GEOM tetra_size 1e+010 name crv.03 vertex1 pnt.00 vertex2 pnt.03
+bspline
+2,2,0
+0,0,1,1
+0,10,0
+10,6,0
+define_curve family WALL tetra_size 1e+010 name crv.04 vertex1 pnt.00 vertex2 pnt.03
+bspline
+2,2,0
+0,0,1,1
+0,10,0
+10,6,0
+define_curve family GEOM tetra_size 1e+010 name crv.05 vertex1 pnt.03 vertex2 pnt.02
+bspline
+2,2,0
+0,0,1,1
+10,6,0
+10,-6,0
+define_curve family GEOM tetra_size 1e+010 name crv.07 vertex1 pnt.02 vertex2 pnt.05
+bspline
+2,2,0
+0,0,1,1
+10,-6,0
+50,-20,0
+define_curve family WALL tetra_size 1e+010 name crv.08 vertex1 pnt.02 vertex2 pnt.05
+bspline
+2,2,0
+0,0,1,1
+10,-6,0
+50,-20,0
+define_curve family GEOM tetra_size 1e+010 name crv.09 vertex1 pnt.03 vertex2 pnt.04
+bspline
+2,2,0
+0,0,1,1
+10,6,0
+50,20,0
+define_curve family WALL tetra_size 1e+010 name crv.10 vertex1 pnt.03 vertex2 pnt.04
+bspline
+2,2,0
+0,0,1,1
+10,6,0
+50,20,0
+define_curve family GEOM tetra_size 1e+010 name crv.11 vertex1 pnt.04 vertex2 pnt.05
+bspline
+2,2,0
+0,0,1,1
+50,20,0
+50,-20,0
+define_curve family EXIT tetra_size 1e+010 name crv.12 vertex1 pnt.04 vertex2 pnt.05
+bspline
+2,2,0
+0,0,1,1
+50,20,0
+50,-20,0
+define_curve family GEOM tetra_size 1e+010 name crv.13 vertex1 pnt.05 vertex2 pnt.06
+bspline
+2,2,0
+0,0,1,1
+50,-20,0
+50,-40,0
+define_curve family OUT tetra_size 1e+010 name crv.14 vertex1 pnt.05 vertex2 pnt.06
+bspline
+2,2,0
+0,0,1,1
+50,-20,0
+50,-40,0
+define_curve family GEOM tetra_size 1e+010 name crv.15 vertex1 pnt.06 vertex2 pnt.09
+bspline
+2,2,0
+0,0,1,1
+50,-40,0
+100,-40,0
+define_curve family OUT tetra_size 1e+010 name crv.16 vertex1 pnt.06 vertex2 pnt.09
+bspline
+2,2,0
+0,0,1,1
+50,-40,0
+100,-40,0
+define_curve family GEOM tetra_size 1e+010 name crv.17 vertex1 pnt.05 vertex2 pnt.10
+bspline
+2,2,0
+0,0,1,1
+50,-20,0
+100,-20,0
+define_curve family INTER tetra_size 1e+010 name crv.18 vertex1 pnt.05 vertex2 pnt.10
+bspline
+2,2,0
+0,0,1,1
+50,-20,0
+100,-20,0
+define_curve family GEOM tetra_size 1e+010 name crv.19 vertex1 pnt.10 vertex2 pnt.09
+bspline
+2,2,0
+0,0,1,1
+100,-20,0
+100,-40,0
+define_curve family OUT tetra_size 1e+010 name crv.20 vertex1 pnt.10 vertex2 pnt.09
+bspline
+2,2,0
+0,0,1,1
+100,-20,0
+100,-40,0
+define_curve family GEOM tetra_size 1e+010 name crv.21 vertex1 pnt.04 vertex2 pnt.11
+bspline
+2,2,0
+0,0,1,1
+50,20,0
+100,20,0
+define_curve family INTER tetra_size 1e+010 name crv.22 vertex1 pnt.04 vertex2 pnt.11
+bspline
+2,2,0
+0,0,1,1
+50,20,0
+100,20,0
+define_curve family GEOM tetra_size 1e+010 name crv.23 vertex1 pnt.11 vertex2 pnt.10
+bspline
+2,2,0
+0,0,1,1
+100,20,0
+100,-20,0
+define_curve family OUT tetra_size 1e+010 name crv.24 vertex1 pnt.11 vertex2 pnt.10
+bspline
+2,2,0
+0,0,1,1
+100,20,0
+100,-20,0
+define_curve family GEOM tetra_size 1e+010 name crv.25 vertex1 pnt.07 vertex2 pnt.04
+bspline
+2,2,0
+0,0,1,1
+50,40,0
+50,20,0
+define_curve family OUT tetra_size 1e+010 name crv.26 vertex1 pnt.07 vertex2 pnt.04
+bspline
+2,2,0
+0,0,1,1
+50,40,0
+50,20,0
+define_curve family GEOM tetra_size 1e+010 name crv.27 vertex1 pnt.07 vertex2 pnt.08
+bspline
+2,2,0
+0,0,1,1
+50,40,0
+100,40,0
+define_curve family OUT tetra_size 1e+010 name crv.28 vertex1 pnt.07 vertex2 pnt.08
+bspline
+2,2,0
+0,0,1,1
+50,40,0
+100,40,0
+define_curve family GEOM tetra_size 1e+010 name crv.29 vertex1 pnt.08 vertex2 pnt.11
+bspline
+2,2,0
+0,0,1,1
+100,40,0
+100,20,0
+define_curve family OUT tetra_size 1e+010 name crv.30 vertex1 pnt.08 vertex2 pnt.11
+bspline
+2,2,0
+0,0,1,1
+100,40,0
+100,20,0
+define_curve family GEOM tetra_size 1e+010 name crv.31 vertex1 pnt.03 vertex2 pnt.02
+bspline
+2,2,0
+0,0,1,1
+10,6,0
+10,-6,0
+define_curve family INTER tetra_size 1e+010 name crv.32 vertex1 pnt.03 vertex2 pnt.02
+bspline
+2,2,0
+0,0,1,1
+10,6,0
+10,-6,0
+affix 0
+define_model 1e+010 reference_size 1
+return

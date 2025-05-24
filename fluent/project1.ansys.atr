@@ -1,0 +1,41 @@
+# Written by ICEM CFD 14.5.7, user win10-s, Fri May 16 14:59:12 涓­鍥芥爣鍑嗘椂闂´ 2025
+
+begin family GEOM
+    begin solver "ANSYS Fluent"
+    end solver "ANSYS Fluent"
+end family GEOM
+
+begin family IN
+    begin solver "ANSYS Fluent"
+    end solver "ANSYS Fluent"
+end family IN
+
+begin family OUT
+    begin solver "ANSYS Fluent"
+    end solver "ANSYS Fluent"
+end family OUT
+
+begin family WALL
+    begin solver "ANSYS Fluent"
+    end solver "ANSYS Fluent"
+end family WALL
+
+begin family EXIT
+    begin solver "ANSYS Fluent"
+    end solver "ANSYS Fluent"
+end family EXIT
+
+begin family INTER
+    begin solver "ANSYS Fluent"
+    end solver "ANSYS Fluent"
+end family INTER
+
+begin family SOLID
+    begin solver "ANSYS Fluent"
+    end solver "ANSYS Fluent"
+end family SOLID
+
+begin family CREATED_FACES
+    begin solver "ANSYS Fluent"
+    end solver "ANSYS Fluent"
+end family CREATED_FACES

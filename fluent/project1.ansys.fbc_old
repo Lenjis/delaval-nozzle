@@ -1,0 +1,10 @@
+# family_boco file written by ICEM CFD by win10-s on Fri May 16 14:59:12 涓­鍥芥爣鍑嗘椂闂´ 2025
+## solver ANSYS Fluent
+"GEOM"
+"IN"
+"OUT"
+"WALL"
+"EXIT"
+"INTER"
+"SOLID"
+"CREATED_FACES"
