@@ -11,10 +11,10 @@
 %               Date   : 2025/5/24                               %
 %               License: MIT                                     %
 %----------------------------------------------------------------%
+
 clear;
-close all;
 C = 0.5; % Courant number
-max_iter = 1000; % Maximum number of iterations
+max_iter = 4000; % Maximum number of iterations
 gamma = 1.4; % Specific heat ratio
 % Geometry
 dx = 0.1;
@@ -105,63 +105,5 @@ for t = 1:max_iter
     % Compute and plot residuals (L2 norm of change in variables)
     res(t, :) = [norm(r(t + 1, :) - r(t, :)), norm(T(t + 1, :) - T(t, :)), norm(V(t + 1, :) - V(t, :))];
 
+    disp("Iter: " + t + "    " + "Residual: " + res(t, 1) + "  " + res(t, 2) + "  " + res(t, 3));
 end
-
-% Visualization
-figure;
-semilogy(1:max_iter, res(:, 1), 'LineWidth', 2);
-hold on;
-semilogy(1:max_iter, res(:, 2), 'LineWidth', 2);
-hold on;
-semilogy(1:max_iter, res(:, 3), 'LineWidth', 2);
-xlabel('Iteration');
-title('Residual');
-
-figure;
-subplot(1, 3, 1);
-plot(x, r(end, :), 'LineWidth', 2);
-xlabel('x');
-ylabel("Density");
-subplot(1, 3, 2);
-plot(x, T(end, :), 'LineWidth', 2);
-xlabel('x');
-ylabel("Temperature");
-subplot(1, 3, 3);
-plot(x, M(end, :), 'LineWidth', 2);
-xlabel('x');
-ylabel("Mach number");
-
-figure;
-subplot(1, 3, 1);
-plot(1:max_iter, r(2:end, 16), 'LineWidth', 2);
-xlabel('Iteration');
-ylabel("Density");
-subplot(1, 3, 2);
-plot(1:max_iter, T(2:end, 16), 'LineWidth', 2);
-xlabel('Iteration');
-ylabel("Temperature");
-subplot(1, 3, 3);
-plot(1:max_iter, M(2:end, 16), 'LineWidth', 2);
-xlabel('Iteration');
-ylabel("Mach number");
-
-% Plot mass flow rate through the nozzle
-mass_flow = r .* V .* A;
-figure;
-plot(x, mass_flow(1, :), 'LineWidth', 2);
-hold on;
-plot(x, mass_flow(51, :), 'LineWidth', 2);
-hold on;
-plot(x, mass_flow(101, :), 'LineWidth', 2);
-hold on;
-plot(x, mass_flow(151, :), 'LineWidth', 2);
-hold on;
-plot(x, mass_flow(201, :), 'LineWidth', 2);
-hold on;
-plot(x, mass_flow(701, :), 'LineWidth', 2);
-hold on;
-xlabel('x');
-ylabel('Mass Flow Rate');
-title('Mass Flow Rate Along the Nozzle');
-legend("0dt", "50dt", "100dt", "150dt", "200dt", "700dt");
-grid on;
