@@ -14,7 +14,7 @@
 
 clear;
 C = 0.5; % Courant number
-max_iter = 4000; % Maximum number of iterations
+max_iter = 2000; % Maximum number of iterations
 gamma = 1.4; % Specific heat ratio
 % Geometry
 dx = 0.1;
