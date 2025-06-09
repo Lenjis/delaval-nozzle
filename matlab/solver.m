@@ -102,6 +102,9 @@ for t = 1:max_iter
     T(t + 1, end) = 2 * T(t + 1, end - 1) - T(t + 1, end - 2);
     V(t + 1, end) = 2 * V(t + 1, end - 1) - V(t + 1, end - 2);
 
+    % Compute pressure
+    p = r(end, :) .* T(end, :);
+
     % Compute and plot residuals (L2 norm of change in variables)
     res(t, :) = [norm(r(t + 1, :) - r(t, :)), norm(T(t + 1, :) - T(t, :)), norm(V(t + 1, :) - V(t, :))];
 

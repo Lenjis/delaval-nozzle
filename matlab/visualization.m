@@ -53,7 +53,7 @@ grid on;
 set(gca,'OuterPosition',[.66 0 .33 1], 'FontSize', 12, 'FontName', "NewComputerModern10");
 saveas(gcf, 'final_state.svg');
 
-% Plot density, temperature, and Mach number at the final time step
+% Plot density, temperature, Mach number and pressure at the final time step
 figure;
 set(gcf,'Units', 'centimeters', 'OuterPosition',[fig_width+2, 5, fig_width, fig_width]);
 subplot(2, 2, 1);
