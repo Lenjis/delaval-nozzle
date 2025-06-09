@@ -53,28 +53,37 @@ grid on;
 set(gca,'OuterPosition',[.66 0 .33 1], 'FontSize', 12, 'FontName', "NewComputerModern10");
 saveas(gcf, 'final_state.svg');
 
-% Plot density, temperature, and Mach number at each time step
+% Plot density, temperature, and Mach number at the final time step
 figure;
-set(gcf,'Units', 'centimeters', 'OuterPosition',[1 22 fig_width 10]);
-subplot(1, 3, 1);
-plot(1:max_iter, r(2:end, 16), 'LineWidth', 2);
-xlabel('Iteration');
+set(gcf,'Units', 'centimeters', 'OuterPosition',[fig_width+2, 5, fig_width, fig_width]);
+subplot(2, 2, 1);
+plot(x, r(end, :), 'LineWidth', 2);
+xlabel('x');
 ylabel("Density");
-set(gca,'OuterPosition',[.0 .0 .33 1], 'FontSize', 12, 'FontName', "NewComputerModern10");
+set(gca,'OuterPosition',[.0 .5 .5 .5], 'FontSize', 12, 'FontName', "NewComputerModern10");
 grid on;
-subplot(1, 3, 2);
-plot(1:max_iter, T(2:end, 16), 'LineWidth', 2);
-xlabel('Iteration');
+
+subplot(2, 2, 2);
+plot(x, T(end, :), 'LineWidth', 2);
+xlabel('x');
 ylabel("Temperature");
-set(gca,'OuterPosition',[.33 .0 .33 1], 'FontSize', 12, 'FontName', "NewComputerModern10");
+set(gca,'OuterPosition',[.5 .5 .5 .5], 'FontSize', 12, 'FontName', "NewComputerModern10");
 grid on;
-subplot(1, 3, 3);
-plot(1:max_iter, M(2:end, 16), 'LineWidth', 2);
-xlabel('Iteration');
+
+subplot(2, 2, 3);
+plot(x, M(end, :), 'LineWidth', 2);
+xlabel('x');
 ylabel("Mach number");
 grid on;
-set(gca,'OuterPosition',[.66 .0 .33 1], 'FontSize', 12, 'FontName', "NewComputerModern10");
-saveas(gcf, 'convergence.svg');
+
+set(gca,'OuterPosition',[0 0 .5 .5], 'FontSize', 12, 'FontName', "NewComputerModern10");
+subplot(2, 2, 4);
+plot(x, p(end, :), 'LineWidth', 2);
+xlabel('x');
+ylabel("Pressure");
+grid on;
+set(gca,'OuterPosition',[.5 0 .5 .5], 'FontSize', 12, 'FontName', "NewComputerModern10");
+saveas(gcf, 'final_state.svg');
 
 % Plot mass flow rate through the nozzle
 mass_flow = r .* V .* A;
